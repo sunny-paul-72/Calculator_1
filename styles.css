@@ -1,11 +1,14 @@
+/* General Body Styling */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #E0E0E0;
+    margin: 0;
 }
 
+/* Calculator Styling */
 .calculator {
     width: 320px;
     background-color: #E0E0E0;
@@ -14,26 +17,34 @@ body {
     box-shadow: 10px 10px 20px #b3b3b3, -10px -10px 20px #ffffff;
 }
 
+/* Display Styling */
 #display {
     width: 100%;
     height: 60px;
     background-color: #E0E0E0;
     color: #333;
     text-align: right;
-    font-size: 2rem;
+    font-size: 32px; /* Default font size */
     padding: 15px;
     border: none;
     border-radius: 20px;
     box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
     margin-bottom: 20px;
+    cursor: text; /* Show text cursor */
+    user-select: text; /* Allow text selection */
+    outline: none; /* Remove focus outline */
+    caret-color: #333; /* Customize caret color */
+    transition: font-size 0.2s ease; /* Smooth resizing */
 }
 
+/* Button Container */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
+/* Buttons Styling */
 button {
     background-color: #E0E0E0;
     padding: 20px;
@@ -45,6 +56,74 @@ button {
     transition: all 0.2s ease;
 }
 
+/* Hover Effect */
 button:hover {
     box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
+}
+
+/* Active Button Effect */
+.button-active {
+    box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
+
+/* Special Styling for the Equal Button */
+.equal {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.equal:hover {
+    background-color: #45A049;
+}
+
+/* Styling for the Zero Button */
+.zero {
+    grid-column: span 2; /* Make the zero button span two columns */
+}
+
+/* Font Size Adjustment based on Input Length */
+#display {
+    font-size: 32px; /* Default font size */
+    transition: font-size 0.2s ease; /* Smooth resizing */
+}
+
+/* Styling for the "Backspace" icon */
+button i {
+    font-size: 1.2rem;
+}
+
+/* Additional Styling for Better Visuals */
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+button:active {
+    box-shadow: inset 2px 2px 5px #b3b3b3, inset -2px -2px 5px #ffffff; /* Active state effect */
+}
+
+/* Button Layout Adjustments */
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+/* Responsive Layout (For smaller screens) */
+@media (max-width: 400px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    #display {
+        font-size: 28px; /* Slightly smaller font size on small screens */
+    }
 }
